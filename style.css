@@ -1,52 +1,232 @@
+@font-face {
+    font-family: 'Bouncy';
+    src: url('fonts/Bouncy-PERSONALUSEONLY.woff') format('woff');
+  }
+
+  h1 {
+    font-family: 'Bouncy', sans-serif;
+  }
+  p {
+    font-family: 'Bouncy', sans-serif;
+  } 
+
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #000000, #434343);
-    color: white;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    text-align: center;
   }
   
   header {
+    text-align: center;
     background-color: #222;
+    color: white;
     padding: 20px;
-    font-size: 2em;
   }
   
-  .galeria {
+  header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  nav {
+    margin: 20px 0;
+  }
+  
+  .navbar {
+    list-style-type: none;
+    padding: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
     gap: 20px;
   }
   
-  .pelicula {
-    background-color: #333;
-    border: 2px solid #555;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 200px;
-    transition: transform 0.3s;
+  .navbar li {
+    display: inline;
+    background-color: #222;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5)
   }
   
-  .pelicula:hover {
-    transform: scale(1.05);
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Estilo de las categorías y las películas */
+  .categoria {
+    display: none;
+    margin: 20px;
+  }
+  
+  .categoria.activa {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cuadrícula responsiva */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .pelicula {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
   
   .pelicula img {
     width: 100%;
     height: auto;
+    border-bottom: 2px solid #ff6347;
   }
   
   .pelicula h2 {
-    font-size: 1em;
-    margin: 10px 0;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    font-weight: normal;
   }
   
-  footer {
-    background-color: #111;
+  .pelicula h3 {
     padding: 10px;
-    font-size: 0.9em;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Estilo de la galería */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cuadrícula responsiva */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+ /* Estilo para el formulario oscuro y moderno */
+
+#formulario-sugerencia {
+    background-color: #333; /* Fondo oscuro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 0 auto;
+    color: #fff; /* Texto blanco */
+  }
+  
+  #formulario-sugerencia h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #ccc; /* Etiquetas de texto claras */
+  }
+  
+  form input,
+  form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #444; /* Borde más oscuro */
+    background-color: #222; /* Fondo oscuro para los inputs */
+    color: #fff; /* Texto blanco dentro de los inputs */
+    font-size: 1rem;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    border-color: #ff6347; /* Borde rojo cuando se selecciona */
+    outline: none;
+    background-color: #333; /* Fondo más oscuro al seleccionar */
+  }
+  
+  form button {
+    padding: 12px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #ff4500;
+  }
+  
+  form button:active {
+    background-color: #ff6347;
+    transform: scale(0.98); /* Efecto de presionar el botón */
+  }
+  
+  form textarea {
+    min-height: 120px;
+    resize: vertical; /* Permitir cambiar el tamaño del textarea */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    margin: 10px 0 5px;
+  }
+  
+  form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  form button {
+    padding: 10px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #ff4500;
+  }
+  
+  /* Estilo del pie de página */
+  footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
   }
   
