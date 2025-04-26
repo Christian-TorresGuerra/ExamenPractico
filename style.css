@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #000000, #434343);
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  header {
+    background-color: #222;
+    padding: 20px;
+    font-size: 2em;
+  }
+  
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .pelicula {
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    transition: transform 0.3s;
+  }
+  
+  .pelicula:hover {
+    transform: scale(1.05);
+  }
+  
+  .pelicula img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .pelicula h2 {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  
+  footer {
+    background-color: #111;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  
