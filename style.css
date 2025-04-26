@@ -2,7 +2,7 @@
     font-family: 'Bouncy';
     src: url('fonts/Bouncy-PERSONALUSEONLY.woff') format('woff');
   }
-  
+
   h1 {
     font-family: 'Bouncy', sans-serif;
   }
@@ -26,12 +26,12 @@ body {
   }
   
   .galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-  }
+    padding: 20px;
+    justify-items: center;
+  }  
   
   .pelicula {
     background-color: #333;
@@ -61,4 +61,49 @@ body {
     padding: 10px;
     font-size: 0.9em;
   }
+  
+  nav {
+    background-color: #222;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'MiFuentePersonalizada', sans-serif; /* O tu fuente descargada */
+    transition: color 0.3s;
+  }
+  
+  .navbar li a:hover {
+    color: #ffcc00;
+  }
+
+  .categoria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+  .categoria.activa {
+    display: block;
+    opacity: 1;
+  }
+  
   
