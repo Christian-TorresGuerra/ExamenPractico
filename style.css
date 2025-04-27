@@ -223,3 +223,8 @@
     bottom: 0;
   }
   
+  .separador {
+    margin: 40px 0;
+    padding: 1px;
+    border-top: 15px solid #333; /* Cuadro del separador */
+  }
